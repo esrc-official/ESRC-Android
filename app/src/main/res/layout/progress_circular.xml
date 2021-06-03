@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProgressBar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="?android:progressBarStyleHorizontal"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:padding="10dp"
+    android:progress="0"
+    android:progressDrawable="@drawable/progress_circular"
+    android:visibility="gone"
+    app:layout_constraintWidth_max="48dp"
+    app:layout_constraintHeight_max="48dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
