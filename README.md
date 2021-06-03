@@ -31,8 +31,6 @@ The minimum requirements to use our Android sample are:
 
 ## Getting started
 
-### Option 1. Use ESRC Fragment layout to use camera
-
 if you would like to try the sample app specifically fit to your usage, you can do so by following the steps below.
 
 ### Step 1: Initialize the ESRC SDK
@@ -55,9 +53,9 @@ ESRC.init(APP_ID, getApplicationContext(), new ESRCLicense.ESRCLicenseHandler() 
 
 > Note: The `ESRC.init()` method must be called once across your Android app. It is recommended to initialize the ESRC SDK in the `onCreate()` method of the Application instance.
 
-### Step 2: Bind the ESRC Fragment
+### Step 2: Bind the ESRC Fragment (Optional)
 
-Include the **container** to bind the ESRC Fragment in your layout `.xml` file.
+If you don't want to develop a layout that uses the camera, you can ues the ESRC Fragment provided from the ESRC SDK. Include the **container** to bind the ESRC Fragment in your layout `.xml` file. Please skip the Step 4: Feed the ESRC SDK. The ESRC Fragment will feed the image to our SDK itself.
 
 ```xml
 <FrameLayout
@@ -114,82 +112,15 @@ ESRC.start(ENABLE_HRV, ENABLE_DRAW, new ESRC.ESRCHandler() {
 });
 ```
 
-### Step 4: Stop the ESRC SDK
+### Step 4: Feed the ESRC SDK (Optional)
 
-When your app is not use the camera or destroyed, stop the ESRC SDK.
-
-```java
-ESRC.stop();
-```
-
-
-### Option 2. Use OpenCV layout to use camera
-
-if you would like to try the sample app specifically fit to your usage, you can do so by following the steps below.
-
-### Step 1: Initialize the ESRC SDK
-
-Initialization binds the ESRC SDK to Android’s context, thereby allowing it to use a camera in your mobile. To the `init()` method, pass the **App ID** of your ESRC application to initialize the ESRC SDK and the **ESRCLicenseHandler** to received callback for validation of the App ID.
-
-```java
-ESRC.init(APP_ID, getApplicationContext(), new ESRCLicense.ESRCLicenseHandler() {
-    @Override
-    public void onValidatedLicense() {
-        …
-    }
-    
-    @Override
-    public void onInvalidatedLicense() {
-        …
-    }
-});
-```
-
-> Note: The `ESRC.init()` method must be called once across your Android app. It is recommended to initialize the ESRC SDK in the `onCreate()` method of the Application instance.
-
-### Step 2: Start the ESRC SDK
-
-Start the ESRC SDK to recognize your facial expression, heart response and emotion. To the `start()` method, pass the `ENABLE_HRV` and `ENABLE_DRAW` parameters for whether to analyze HRV and whether to visualize the face bounding box and the `ESRC.ESRCHandler` to handle the results. You should implement the callback method of `ESRC.ESRCHandler` interface. So, you can receive the results of face, facial landmark, head pose, attention, facial expression, heart rate, heart rate variability and engagement. Please refer to **[sample app](https://github.com/esrc-official/ESRC-Android)**.
-
-```java
-ESRC.start(ENABLE_HRV, ENABLE_DRAW, new ESRC.ESRCHandler() {
-    @Override
-    public void onDetectedFace(ESRCTYPE.Face face, ESRCException e) {
-        if(e != null) {
-            // Handle error.
-        }
-        
-	// The face is detected.
-        // Through the “face” parameter of the onDetectedFace() callback method,
-        // you can get the location of the face from the result object
-        // that ESRC SDK has passed to the onDetectedFace().
-        …
-    }
-    
-    // Please implement other callback method of ESRC.ESRCHandler interface.
-    @Override public void onNotDetectedFace( … ) { … }
-    @Override public void onDetectedFacialLandmark( … ) { … }
-    @Override public void onAnalyzedFacialActionUnit( … ) { … }
-    @Override public void onRecognizedFacialExpression( … ) { … }
-    @Override public void onEstimatedHeadPose( … ) { … }
-    @Override public void onRecognizedAttention( … ) { … }
-    @Override public void didChangedProgressRatioOnRemoteHR( … ) { … }
-    @Override public void onEstimatedRemoteHR( … ) { … }
-    @Override public void didChangedProgressRatioOnHRV( … ) { … }
-    @Override public void onAnalyzedHRV( … ) { … }
-    @Override public void onRecognizedEngagement( … ) { … }
-});
-```
-
-### Step 3: Feed the ESRC SDK
-
-Feed `Mat` on the ESRC SDK. To the `feed()` method, pass the `Mat` image received using a camera in real-time. Please do it at 10 fps.
+Feed `OpenCV Mat` on the ESRC SDK. To the `feed()` method, pass the `Mat` image received using a camera in real-time. Please do it at 10 fps. You can skip this step if you follow Step 2: Bind the ESRC Fragment.
 
 ```java
 ESRC.feed(Mat);
 ```
 
-### Step 4: Stop the ESRC SDK
+### Step 5: Stop the ESRC SDK
 
 When your app is not use the camera or destroyed, stop the ESRC SDK.
 
