@@ -1,7 +1,7 @@
 # ESRC SDK for Android Samples
 [![Platform](https://img.shields.io/badge/platform-ANDROID-orange.svg)](https://github.com/esrc-official/ESRC-Android)
 [![Languages](https://img.shields.io/badge/language-JAVA-orange.svg)](https://github.com/esrc-official/ESRC-Android)
-[![Commercial License](https://img.shields.io/badge/License-Commercial-brightgreen.svg)](https://github.com/esrc-official/ESRC-Android/blob/master/LICENSE)
+[![Commercial License](https://img.shields.io/badge/License-Commercial-brightgreen.svg)](https://github.com/esrc-official/ESRC-Android/blob/master/LICENSE.md)
 
 <br />
 
@@ -23,9 +23,9 @@ To use our Android samples, you should first install [ESRC SDK for Android](http
 
 The minimum requirements to use our Android sample are:
 
-Android 4.2 (API level 17) or later <br />
-Java 8 or later <br />
-Gradle 4.0.0 or later <br />
+- Android 4.2 (API level 17) or later <br />
+- Java 8 or later <br />
+- Gradle 4.0.0 or later <br />
 
 <br />
 
