@@ -146,4 +146,4 @@ cd ESRC-Android
 
 ## Reference
 
-For further detail on ESRC SDK for Android, reter to [ESRC SDK for Android README](https://github.com/esrc-official/ESRC-Android/README.md).
+For further detail on ESRC SDK for Android, reter to [ESRC SDK for Android README](https://github.com/esrc-official/ESRC-Android/blob/master/README.md).
