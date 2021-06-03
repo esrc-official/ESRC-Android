@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2169660e-dc24-49db-8be3-93db2109345f" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="ProjectId" id="1sectGwtGuJamy2saP259O0F3AW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="external.system.task.project.file.to.start" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="assemble" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2169660e-dc24-49db-8be3-93db2109345f" name="Default Changelist" comment="" />
+      <created>1621236708062</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621236708062</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1509" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621237553961">
+      <screen x="-1920" y="2" width="1920" height="1040" />
+    </state>
+    <state x="-1509" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.2.1920.1040@-1920.2.1920.1040" timestamp="1621237553961" />
+    <state x="-1183" y="280" key="FileChooserDialogImpl" timestamp="1621236876527">
+      <screen x="-1920" y="2" width="1920" height="1040" />
+    </state>
+    <state x="-1183" y="280" key="FileChooserDialogImpl/0.0.1920.1040/-1920.2.1920.1040@-1920.2.1920.1040" timestamp="1621236876527" />
+    <state width="1854" height="281" key="GridCell.Tab.0.bottom" timestamp="1621236983507">
+      <screen x="-1920" y="2" width="1920" height="1040" />
+    </state>
+    <state width="1854" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.2.1920.1040@-1920.2.1920.1040" timestamp="1621236983507" />
+    <state width="1854" height="281" key="GridCell.Tab.0.center" timestamp="1621236983507">
+      <screen x="-1920" y="2" width="1920" height="1040" />
+    </state>
+    <state width="1854" height="281" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.2.1920.1040@-1920.2.1920.1040" timestamp="1621236983507" />
+    <state width="1854" height="281" key="GridCell.Tab.0.left" timestamp="1621236983507">
+      <screen x="-1920" y="2" width="1920" height="1040" />
+    </state>
+    <state width="1854" height="281" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.2.1920.1040@-1920.2.1920.1040" timestamp="1621236983507" />
+    <state width="1854" height="281" key="GridCell.Tab.0.right" timestamp="1621236983507">
+      <screen x="-1920" y="2" width="1920" height="1040" />
+    </state>
+    <state width="1854" height="281" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.2.1920.1040@-1920.2.1920.1040" timestamp="1621236983507" />
+    <state x="-1462" y="169" key="SettingsEditor" timestamp="1621236978605">
+      <screen x="-1920" y="2" width="1920" height="1040" />
+    </state>
+    <state x="-1462" y="169" key="SettingsEditor/0.0.1920.1040/-1920.2.1920.1040@-1920.2.1920.1040" timestamp="1621236978605" />
+    <state x="-1307" y="245" width="672" height="677" key="run.anything.popup" timestamp="1621236969614">
+      <screen x="-1920" y="2" width="1920" height="1040" />
+    </state>
+    <state x="-1307" y="245" width="672" height="677" key="run.anything.popup/0.0.1920.1040/-1920.2.1920.1040@-1920.2.1920.1040" timestamp="1621236969614" />
+  </component>
+</project>
