@@ -68,7 +68,7 @@ ESRC.init(APP_ID, getApplicationContext(), new ESRCLicense.ESRCLicenseHandler() 
 
 > Note: The `ESRC.init()` method must be called once across your Android app. It is recommended to initialize the ESRC SDK in the `onCreate()` method of the Application instance.
 
-### Step 2: Bind the ESRC Fragment (Optional)
+### (Optional) Step 2: Bind the ESRC Fragment
 
 If you don't want to develop a layout that uses the camera, you can ues the ESRC Fragment provided from the ESRC SDK. Include the **container** to bind the ESRC Fragment in your layout `.xml` file. Please skip the Step 4: Feed the ESRC SDK. The ESRC Fragment will feed the image to our SDK itself.
 
@@ -127,7 +127,7 @@ ESRC.start(ENABLE_HRV, ENABLE_DRAW, new ESRC.ESRCHandler() {
 });
 ```
 
-### Step 4: Feed the ESRC SDK (Optional)
+### (Optional) Step 4: Feed the ESRC SDK
 
 Feed `OpenCV Mat` on the ESRC SDK. To the `feed()` method, pass the `Mat` image received using a camera in real-time. Please do it at 10 fps. You can skip this step if you follow Step 2: Bind the ESRC Fragment.
 
