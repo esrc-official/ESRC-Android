@@ -399,11 +399,6 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
                     e.printStackTrace();
                 }
             }
-
-            @Override
-            public void onRecognizedEngagement2(ESRCType.Engagement2 engagement, ESRCException e) {
-                // Deprecated
-            }
         });
     }
 
