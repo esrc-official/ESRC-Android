@@ -6,11 +6,13 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.annotation.TargetApi;
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -32,12 +34,22 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 public class MainActivity extends AppCompatActivity implements ActivityCompat.OnRequestPermissionsResultCallback {
     private static final String TAG = "MainActivity";
     private static final String APP_ID = "";  // Application ID.
-    private static final boolean ENABLE_HRV = true;  // Enablement of HRV analysis.
-    private static final boolean ENABLE_DRAW = false;  // Enablement of visualzation.
 
     // Permission
     private static final int PERMISSIONS_REQUEST_CODE = 1000;
     private static final String[] PERMISSIONS = {INTERNET, CAMERA, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE};
+
+    // Property
+    private ESRCType.Property mProperty = new ESRCType.Property(
+            false,  // Whether visualize result or not. It is only valid If you bind the ESRC Fragment (i.e., Step 2).
+            true,  // Whether analyze measurement environment or not.
+            true,  // Whether detect face or not.
+            true,  // Whether detect facial landmark or not. If enableFace is false, it is also automatically set to false.
+            true,  // Whether analyze facial action unit or not. If enableFace or enableFacialLandmark is false, it is also automatically set to false.
+            true,  // Whether recognize facial expression or not. If enableFace is false, it is also automatically set to false.
+            true,  // Whether estimate remote hr or not. If enableFace is false, it is also automatically set to false.
+            true,  // Whether analyze HRV not not. If enableFace or enableRemoteHR is false, it is also automatically set to false.
+            true);  // Whether recognize engagement or not. If enableRemoteHR and enableHRV are false, it is also automatically set to false.
 
     // Layout variables for FaceBox
     private TextView mFaceBoxText;
@@ -76,6 +88,9 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
     private ProgressBar mEngagementSpinnerDummy;
     private ProgressBar mEngagementSpinner;
 
+    // Dialog variables
+    private Handler mHandler = new Handler();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,6 +124,33 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
                 Toast.makeText(getApplicationContext(), "Invalid license", Toast.LENGTH_SHORT).show();
             }
         });
+
+        // Timer
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Show alert dialog
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("Alert");
+                builder.setMessage("If you want to use the ESRC SDK, please visit the homepage: https://www.esrc.co.kr");
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        MainActivity.this.finish();
+                    }
+                });
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
+                // Close activity
+                mHandler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        dialog.dismiss();
+                        MainActivity.this.finish();
+                    }
+                }, 5000);
+            }
+        }, 120000);
     }
 
     @Override
@@ -178,7 +220,16 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
         mEngagementSpinner.setVisibility(View.GONE);
 
         // Start ESRC
-        ESRC.start(ENABLE_HRV, ENABLE_DRAW, new ESRC.ESRCHandler() {
+        ESRC.start(mProperty, new ESRC.ESRCHandler() {
+            @Override
+            public void onAnalyzedMeasureEnv(ESRCType.MeasureEnv measureEnv, ESRCException e) {
+                if (e == null) {
+                    Log.d(TAG, "onAnalyzedMeasureEnv: " + measureEnv.toString());
+                } else {
+                    e.printStackTrace();
+                }
+            }
+
             @Override
             public void onDetectedFace(ESRCType.Face face, ESRCException e) {
                 if (e == null) {
