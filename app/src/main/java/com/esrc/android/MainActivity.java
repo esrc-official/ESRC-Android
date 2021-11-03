@@ -268,7 +268,6 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
                 } else {
                     e.printStackTrace();
                 }
-
             }
 
             @Override
