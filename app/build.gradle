@@ -61,7 +61,7 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxjava:3.0.7'
 
     // ESRC SDK
-    implementation name: 'esrc-sdk-2.4.0', ext: 'aar'
+    implementation name: 'esrc-sdk-2.4.1', ext: 'aar'
 
     // Test
     testImplementation 'junit:junit:4.+'
