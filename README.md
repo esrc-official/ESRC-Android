@@ -108,7 +108,8 @@ ESRC.start(
         true,  // Whether recognize facial expression or not. If enableFace is false, it is also automatically set to false.
         true,  // Whether estimate remote hr or not. If enableFace is false, it is also automatically set to false.
         true,  // Whether analyze HRV not not. If enableFace or enableRemoteHR is false, it is also automatically set to false.
-        true,;  // Whether recognize engagement or not. If enableRemoteHR and enableHRV are false, it is also automatically set to false.
+        true,  // Whether recognize engagement or not. If enableRemoteHR and enableHRV are false, it is also automatically set to false.
+        ESRCType.FacialExpression.FACIAL_EXPRESSION_TYPE_ESRC);  // Type of facial expression recognition.
     new ESRC.ESRCHandler() {
         @Override
         public void onDetectedFace(ESRCTYPE.Face face, ESRCException e) {
