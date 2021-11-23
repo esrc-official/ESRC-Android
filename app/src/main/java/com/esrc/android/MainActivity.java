@@ -49,7 +49,8 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
             true,  // Whether recognize facial expression or not. If enableFace is false, it is also automatically set to false.
             true,  // Whether estimate remote hr or not. If enableFace is false, it is also automatically set to false.
             true,  // Whether analyze HRV not not. If enableFace or enableRemoteHR is false, it is also automatically set to false.
-            true);  // Whether recognize engagement or not. If enableRemoteHR and enableHRV are false, it is also automatically set to false.
+            true,  // Whether recognize engagement or not. If enableRemoteHR and enableHRV are false, it is also automatically set to false.
+            ESRCType.FacialExpression.FACIAL_EXPRESSION_TYPE_MARVRUS3);  // Type of facial expression recognition.
 
     // Layout variables for FaceBox
     private TextView mFaceBoxText;
@@ -174,7 +175,8 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
         mFacialExpImageDrawables = new int[] {
                 R.drawable.ic_facial_exp_anger, R.drawable.ic_facial_exp_disgust, R.drawable.ic_facial_exp_fear,
                 R.drawable.ic_facial_exp_happy, R.drawable.ic_facial_exp_sad, R.drawable.ic_facial_exp_surprise,
-                R.drawable.ic_facial_exp_neutral
+                R.drawable.ic_facial_exp_neutral,
+                R.drawable.ic_facial_exp_positive, R.drawable.ic_facial_exp_negative, R.drawable.ic_facial_exp_neutral,
         };
         mFacialExpValContainer = findViewById(R.id.facial_expression_val_container);
         mFacialExpImage = findViewById(R.id.facial_expression_image);
