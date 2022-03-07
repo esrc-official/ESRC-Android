@@ -10,24 +10,28 @@
         FaceBoxImage
     </string>
 
-    <string name="main_facial_expression_title_text">
-        Facial Exp.
+    <string name="main_basic_facial_expression_title_text">
+        Facial Exp.(7T)
     </string>
 
-    <string name="main_facial_expression_image_desc">
-        Facial Exp.
+    <string name="main_basic_facial_expression_image_desc">
+        Facial Exp.(7T)
     </string>
 
-    <string name="facial_expression_val_text">
+    <string name="basic_facial_expression_val_text">
 
     </string>
 
-    <string name="main_head_pose_title_text">
-        Head Pose
+    <string name="main_valence_facial_expression_title_text">
+        Facial Exp.(3T)
     </string>
 
-    <string name="main_head_pose_unit_text">
-        angle
+    <string name="main_valence_facial_expression_image_desc">
+        Facial Exp.(3T)
+    </string>
+
+    <string name="valence_facial_expression_val_text">
+
     </string>
 
     <string name="main_attention_title_text">

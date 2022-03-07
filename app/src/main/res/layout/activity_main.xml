@@ -101,12 +101,12 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/facial_expression_container"
+                android:id="@+id/basic_facial_expression_container"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="2.5dp"
                 android:background="@drawable/bg_round_corner_white"
-                app:layout_constraintEnd_toStartOf="@id/head_pose_container"
+                app:layout_constraintEnd_toStartOf="@id/valence_facial_expression_container"
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintStart_toStartOf="parent"
@@ -114,11 +114,11 @@
                 app:layout_constraintVertical_chainStyle="packed">
 
                 <TextView
-                    android:id="@+id/facial_expression_title_text"
+                    android:id="@+id/basic_facial_expression_title_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="@string/main_facial_expression_title_text"
+                    android:text="@string/main_basic_facial_expression_title_text"
                     android:textColor="@color/primary_color"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -128,7 +128,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/facial_expression_val_container"
+                    android:id="@+id/basic_facial_expression_val_container"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:visibility="gone"
@@ -138,49 +138,49 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/facial_expression_image"
+                        android:id="@+id/basic_facial_expression_image"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:contentDescription="@string/main_facial_expression_image_desc"
+                        android:contentDescription="@string/main_basic_facial_expression_image_desc"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/facial_expression_val_text"
+                        android:id="@+id/basic_facial_expression_val_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:autoSizeMinTextSize="10sp"
-                        android:text="@string/facial_expression_val_text"
+                        android:text="@string/basic_facial_expression_val_text"
                         android:textColor="@color/white"
                         android:textSize="12sp"
                         android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="@id/facial_expression_image"
-                        app:layout_constraintStart_toStartOf="@id/facial_expression_image"
-                        app:layout_constraintTop_toBottomOf="@id/facial_expression_image" />
+                        app:layout_constraintEnd_toEndOf="@id/basic_facial_expression_image"
+                        app:layout_constraintStart_toStartOf="@id/basic_facial_expression_image"
+                        app:layout_constraintTop_toBottomOf="@id/basic_facial_expression_image" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/head_pose_container"
+                android:id="@+id/valence_facial_expression_container"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="2.5dp"
                 android:background="@drawable/bg_round_corner_white"
                 app:layout_constraintEnd_toStartOf="@id/attention_container"
                 app:layout_constraintHorizontal_weight="1"
-                app:layout_constraintStart_toEndOf="@id/facial_expression_container"
+                app:layout_constraintStart_toEndOf="@id/basic_facial_expression_container"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/head_pose_title_text"
+                    android:id="@+id/valence_facial_expression_title_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="@string/main_head_pose_title_text"
+                    android:text="@string/main_valence_facial_expression_title_text"
                     android:textColor="@color/primary_color"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -190,43 +190,37 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/head_pose_val_container"
+                    android:id="@+id/valence_facial_expression_val_container"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <TextView
-                        android:id="@+id/head_pose_val_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:autoSizeMinTextSize="20sp"
-                        android:text="Coming\nSoon"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textAlignment="center"
-                        android:gravity="center"
+                    <ImageView
+                        android:id="@+id/valence_facial_expression_image"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:contentDescription="@string/main_valence_facial_expression_image_desc"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/head_pose_unit_text"
+                        android:id="@+id/valence_facial_expression_val_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:autoSizeMinTextSize="10sp"
-                        android:text="@string/main_head_pose_unit_text"
+                        android:text="@string/valence_facial_expression_val_text"
                         android:textColor="@color/white"
                         android:textSize="12sp"
                         android:textStyle="bold"
-                        android:visibility="gone"
-                        app:layout_constraintEnd_toEndOf="@id/head_pose_val_text"
-                        app:layout_constraintStart_toStartOf="@id/head_pose_val_text"
-                        app:layout_constraintTop_toBottomOf="@id/head_pose_val_text" />
+                        app:layout_constraintEnd_toEndOf="@id/valence_facial_expression_image"
+                        app:layout_constraintStart_toStartOf="@id/valence_facial_expression_image"
+                        app:layout_constraintTop_toBottomOf="@id/valence_facial_expression_image" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -240,7 +234,7 @@
                 android:background="@drawable/bg_round_corner_white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_weight="1"
-                app:layout_constraintStart_toEndOf="@id/head_pose_container"
+                app:layout_constraintStart_toEndOf="@id/valence_facial_expression_container"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
