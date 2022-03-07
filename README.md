@@ -14,7 +14,7 @@
 
 ## Installation
 
-To use our Android samples, you should first install [ESRC SDK for Android](https://github.com/esrc-official/ESRC-SDK-Android) 2.4.3 or higher on your system and should be received License Key by requesting by our email: **esrc@esrc.co.kr** <br /> 
+To use our Android samples, you should first install [ESRC SDK for Android](https://github.com/esrc-official/ESRC-SDK-Android) 2.4.4 or higher on your system and should be received License Key by requesting by our email: **esrc@esrc.co.kr** <br /> 
 
 <br />
 
@@ -105,11 +105,12 @@ ESRC.start(
         true,  // Whether detect face or not.
         true,  // Whether detect facial landmark or not. If enableFace is false, it is also automatically set to false.
         true,  // Whether analyze facial action unit or not. If enableFace or enableFacialLandmark is false, it is also automatically set to false.
-        true,  // Whether recognize facial expression or not. If enableFace is false, it is also automatically set to false.
+        true,  // Whether recognize basic facial expression or not. If enableFace is false, it is also automatically set to false.
+        true,  // Whether recognize valence facial expression or not. If enableFace is false, it is also automatically set to false.
         true,  // Whether estimate remote hr or not. If enableFace is false, it is also automatically set to false.
         true,  // Whether analyze HRV not not. If enableFace or enableRemoteHR is false, it is also automatically set to false.
         true,  // Whether recognize engagement or not. If enableRemoteHR and enableHRV are false, it is also automatically set to false.
-        ESRCType.FacialExpression.FACIAL_EXPRESSION_TYPE_ESRC);  // Type of facial expression recognition.
+        true);  // Whether recognize MEE index or not.
     new ESRC.ESRCHandler() {
         @Override
         public void onDetectedFace(ESRCTYPE.Face face, ESRCException e) {
@@ -129,7 +130,8 @@ ESRC.start(
         @Override public void onAnalyzedMeasureEnv( … ) { … }
         @Override public void onDetectedFacialLandmark( … ) { … }
         @Override public void onAnalyzedFacialActionUnit( … ) { … }
-        @Override public void onRecognizedFacialExpression( … ) { … }
+        @Override public void onRecognizedBasicFacialExpression( … ) { … }
+        @Override public void onRecognizedValenceFacialExpression( … ) { … }
         @Override public void onEstimatedHeadPose( … ) { … }
         @Override public void onRecognizedAttention( … ) { … }
         @Override public void didChangedProgressRatioOnRemoteHR( … ) { … }
@@ -137,6 +139,7 @@ ESRC.start(
         @Override public void didChangedProgressRatioOnHRV( … ) { … }
         @Override public void onAnalyzedHRV( … ) { … }
         @Override public void onRecognizedEngagement( … ) { … }
+        @Override public void onRecognizedMEEIndex( … ) { … }
     });
 ```
 
