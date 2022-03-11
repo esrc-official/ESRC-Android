@@ -109,8 +109,7 @@ ESRC.start(
         true,  // Whether recognize valence facial expression or not. If enableFace is false, it is also automatically set to false.
         true,  // Whether estimate remote hr or not. If enableFace is false, it is also automatically set to false.
         true,  // Whether analyze HRV not not. If enableFace or enableRemoteHR is false, it is also automatically set to false.
-        true,  // Whether recognize engagement or not. If enableRemoteHR and enableHRV are false, it is also automatically set to false.
-        true);  // Whether recognize MEE index or not.
+        true);  // Whether recognize engagement or not. If enableRemoteHR and enableHRV are false, it is also automatically set to false.        
     new ESRC.ESRCHandler() {
         @Override
         public void onDetectedFace(ESRCTYPE.Face face, ESRCException e) {
@@ -139,7 +138,6 @@ ESRC.start(
         @Override public void didChangedProgressRatioOnHRV( … ) { … }
         @Override public void onAnalyzedHRV( … ) { … }
         @Override public void onRecognizedEngagement( … ) { … }
-        @Override public void onRecognizedMEEIndex( … ) { … }
     });
 ```
 
