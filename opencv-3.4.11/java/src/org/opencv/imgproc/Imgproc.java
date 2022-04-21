@@ -5116,7 +5116,6 @@ public class Imgproc {
         cvtColor_1(src.nativeObj, dst.nativeObj, code);
     }
 
-
     //
     // C++:  void cv::cvtColorTwoPlane(Mat src1, Mat src2, Mat& dst, int code)
     //

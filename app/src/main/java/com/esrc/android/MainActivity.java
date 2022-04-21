@@ -246,35 +246,29 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
                 if (e == null) {
                     Log.d(TAG, "onDetectedFace: " + face.toString());
 
-                    // Show FaceBox
-                    int color = getResources().getColor(R.color.primary_color);
-                    mFaceBoxText.setTextColor(color);
-                    mFaceBoxDrawable.setStroke(8, color);
+                    // If face is detected
+                    if (face.getIsDetect()) {
+                        // Show FaceBox
+                        int color = getResources().getColor(R.color.primary_color);
+                        mFaceBoxText.setTextColor(color);
+                        mFaceBoxDrawable.setStroke(8, color);
 
-                    // Show Attention containers
-                    mAttentionValContainer.setVisibility(View.VISIBLE);
-                } else {
-                    e.printStackTrace();
-                }
-            }
+                        // Show Attention containers
+                        mAttentionValContainer.setVisibility(View.VISIBLE);
+                    } else {
+                        // Hide FaceBox
+                        int color = getResources().getColor(R.color.gray);
+                        mFaceBoxText.setTextColor(color);
+                        mFaceBoxDrawable.setStroke(4, color);
 
-            @Override
-            public void onNotDetectedFace(ESRCException e) {
-                if (e == null) {
-                    Log.d(TAG, "onNotDetectedFace");
-
-                    // Hide FaceBox
-                    int color = getResources().getColor(R.color.gray);
-                    mFaceBoxText.setTextColor(color);
-                    mFaceBoxDrawable.setStroke(4, color);
-
-                    // Hide containers
-                    mBasicFacialExpValContainer.setVisibility(View.GONE);
-                    mValenceFacialExpValContainer.setVisibility(View.GONE);
-                    mAttentionValContainer.setVisibility(View.GONE);
-                    mHRValContainer.setVisibility(View.GONE);
-                    mHRVValContainer.setVisibility(View.GONE);
-                    mEngagementValContainer.setVisibility(View.GONE);
+                        // Hide containers
+                        mBasicFacialExpValContainer.setVisibility(View.GONE);
+                        mValenceFacialExpValContainer.setVisibility(View.GONE);
+                        mAttentionValContainer.setVisibility(View.GONE);
+                        mHRValContainer.setVisibility(View.GONE);
+                        mHRVValContainer.setVisibility(View.GONE);
+                        mEngagementValContainer.setVisibility(View.GONE);
+                    }
                 } else {
                     e.printStackTrace();
                 }
@@ -304,7 +298,10 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
                     Log.d(TAG, "onRecognizedBasicFacialExpression: " + basicFacialExpression.toString());
 
                     // Set Basic Facial Expression values
-                    mBasicFacialExpImage.setImageResource(mBasicFacialExpImageDrawables[basicFacialExpression.getEmotion()]);
+                    ESRCType.BasicFacialExpression.Emotion emotion = basicFacialExpression.getEmotion();
+                    if (emotion != null) {
+                        mBasicFacialExpImage.setImageResource(mBasicFacialExpImageDrawables[emotion.ordinal()]);
+                    }
                     mBasicFacialExpValText.setText(basicFacialExpression.getEmotionStr());
 
                     // Show container for Basic Facial Expression
@@ -320,7 +317,10 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
                     Log.d(TAG, "onRecognizedValenceFacialExpression: " + valenceFacialExpression.toString());
 
                     // Set Valence Facial Expression values
-                    mValenceFacialExpImage.setImageResource(mValenceFacialExpImageDrawables[valenceFacialExpression.getEmotion()]);
+                    ESRCType.ValenceFacialExpression.Emotion emotion = valenceFacialExpression.getEmotion();
+                    if (emotion != null) {
+                        mValenceFacialExpImage.setImageResource(mValenceFacialExpImageDrawables[emotion.ordinal()]);
+                    }
                     mValenceFacialExpValText.setText(valenceFacialExpression.getEmotionStr());
 
                     // Show container for Valence Facial Expression

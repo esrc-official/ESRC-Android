@@ -14,7 +14,7 @@
 
 ## Installation
 
-To use our Android samples, you should first install [ESRC SDK for Android](https://github.com/esrc-official/ESRC-SDK-Android) 2.4.4 or higher on your system and should be received License Key by requesting by our email: **esrc@esrc.co.kr** <br /> 
+To use our Android samples, you should first install [ESRC SDK for Android](https://github.com/esrc-official/ESRC-SDK-Android) 2.4.6 or higher on your system and should be received License Key by requesting by our email: **esrc@esrc.co.kr** <br /> 
 
 <br />
 
@@ -125,7 +125,6 @@ ESRC.start(
         }
         
         // Please implement other callback method of ESRC.ESRCHandler interface.
-        @Override public void onNotDetectedFace( … ) { … }
         @Override public void onAnalyzedMeasureEnv( … ) { … }
         @Override public void onDetectedFacialLandmark( … ) { … }
         @Override public void onAnalyzedFacialActionUnit( … ) { … }
