@@ -109,7 +109,7 @@ ESRC.start(
         true,  // Whether recognize valence facial expression or not. If enableFace is false, it is also automatically set to false.
         true,  // Whether estimate remote hr or not. If enableFace is false, it is also automatically set to false.
         true,  // Whether analyze HRV not not. If enableFace or enableRemoteHR is false, it is also automatically set to false.
-        true);  // Whether recognize engagement or not. If enableRemoteHR and enableHRV are false, it is also automatically set to false.        
+        true),  // Whether recognize engagement or not. If enableRemoteHR and enableHRV are false, it is also automatically set to false.        
     new ESRC.ESRCHandler() {
         @Override
         public void onDetectedFace(ESRCTYPE.Face face, ESRCException e) {
@@ -117,10 +117,10 @@ ESRC.start(
                 // Handle error.
             }
             
-        // The face is detected.
+            // The face is detected.
             // Through the “face” parameter of the onDetectedFace() callback method,
             // you can get the location of the face from the result object
-            // that ESRC Heart SDK has passed to the onDetectedFace().
+            // that ESRC SDK has passed to the onDetectedFace().
             …
         }
         
@@ -142,7 +142,7 @@ ESRC.start(
 
 ### (Optional) Step 4: Feed the ESRC SDK
 
-Feed `OpenCV Mat` on the ESRC SDK. To the `feed()` method, pass the `Mat` image received using a camera in real-time. Please do it at 10 fps. You can skip this step if you follow Step 2: Bind the ESRC Fragment.
+Feed `Mat` on the ESRC SDK. To the `feed()` method, pass the `Mat` image received using a camera in real-time. Please do it at 10 fps. You can skip this step if you follow Step 2: Bind the ESRC Fragment.
 
 ```java
 ESRC.feed(Mat);
