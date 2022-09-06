@@ -16,7 +16,6 @@
             <option value="$PROJECT_DIR$/opencv-3.4.11" />
           </set>
         </option>
-        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
