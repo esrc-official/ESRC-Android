@@ -17,8 +17,8 @@ android {
         applicationId "com.esrc.android"
         minSdkVersion 17
         targetSdkVersion 30
-        versionCode 254
-        versionName "2.5.4"
+        versionCode 255
+        versionName "2.5.5"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -61,7 +61,7 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxjava:3.0.7'
 
     // ESRC SDK
-    implementation name: 'esrc-sdk-2.5.4', ext: 'aar'
+    implementation name: 'esrc-sdk-2.5.5', ext: 'aar'
 
     // Test
     testImplementation 'junit:junit:4.+'
