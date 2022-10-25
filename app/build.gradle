@@ -15,10 +15,10 @@ android {
 
     defaultConfig {
         applicationId "com.esrc.android"
-        minSdkVersion 17
+        minSdkVersion 21
         targetSdkVersion 30
-        versionCode 255
-        versionName "2.5.5"
+        versionCode 257
+        versionName "2.5.7"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -60,8 +60,12 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
     implementation 'io.reactivex.rxjava3:rxjava:3.0.7'
 
+    // MediaPipe Face Mesh Solution
+    implementation 'com.google.mediapipe:solution-core:0.8.10'
+    implementation 'com.google.mediapipe:facemesh:0.8.10'
+
     // ESRC SDK
-    implementation name: 'esrc-sdk-2.5.5', ext: 'aar'
+    implementation name: 'esrc-sdk-2.5.7', ext: 'aar'
 
     // Test
     testImplementation 'junit:junit:4.+'

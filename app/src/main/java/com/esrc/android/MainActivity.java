@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
 
     // Property
     private ESRCType.Property mProperty = new ESRCType.Property(
-            false,  // Whether visualize result or not. It is only valid If you bind the ESRC Fragment (i.e., Step 2).
+            true,  // Whether visualize result or not. It is only valid If you bind the ESRC Fragment (i.e., Step 2).
             true,  // Whether analyze measurement environment or not.
             true,  // Whether detect face or not.
             true,  // Whether detect facial landmark or not. If enableFace is false, it is also automatically set to false.
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
             true,  // Whether estimate remote hr or not. If enableFace is false, it is also automatically set to false.
             true,  // Whether analyze HRV or not. If enableFace or enableRemoteHR is false, it is also automatically set to false.
             true,  // Whether recognize engagement or not. If enableRemoteHR and enableHRV are false, it is also automatically set to false.
-            true);  // Whether rint information or not.
+            true);  // Whether print information or not.
 
     // Layout variables for FaceBox
     private TextView mFaceBoxText;
@@ -139,26 +139,10 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                // Show alert dialog
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setTitle("Alert");
-                builder.setMessage("If you want to use the ESRC SDK, please visit the homepage: https://www.esrc.co.kr");
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        MainActivity.this.finish();
-                    }
-                });
-                AlertDialog dialog = builder.create();
-                dialog.show();
-
-                // Close activity
-                mHandler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        dialog.dismiss();
-                        MainActivity.this.finish();
-                    }
-                }, 5000);
+                Toast.makeText(getApplicationContext(),
+                        "If you want to use the ESRC SDK, please visit the homepage: https://www.esrc.co.kr",
+                        Toast.LENGTH_LONG).show();
+                MainActivity.this.finish();
             }
         }, 120000);
     }
