@@ -17,8 +17,8 @@ android {
         applicationId "com.esrc.android"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 257
-        versionName "2.5.7"
+        versionCode 258
+        versionName "2.5.8"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -65,7 +65,7 @@ dependencies {
     implementation 'com.google.mediapipe:facemesh:0.8.10'
 
     // ESRC SDK
-    implementation name: 'esrc-sdk-2.5.7', ext: 'aar'
+    implementation name: 'esrc-sdk-2.5.8', ext: 'aar'
 
     // Test
     testImplementation 'junit:junit:4.+'
