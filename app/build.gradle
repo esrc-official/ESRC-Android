@@ -17,8 +17,8 @@ android {
         applicationId "com.esrc.android"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 258
-        versionName "2.5.8"
+        versionCode 261
+        versionName "2.6.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -39,9 +39,6 @@ repositories {
     flatDir{
         dirs 'libs'
     }
-    maven {
-        url  "https://google.bintray.com/tensorflow"
-    }
 }
 
 dependencies {
@@ -54,18 +51,18 @@ dependencies {
     implementation project(path: ':opencv-3.4.11')
 
     // Tensorflow
-    implementation 'org.tensorflow:tensorflow-lite:0.0.0-nightly'
+    implementation 'org.tensorflow:tensorflow-lite:latest.release'
 
     // RxJava
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
     implementation 'io.reactivex.rxjava3:rxjava:3.0.7'
 
     // MediaPipe Face Mesh Solution
-    implementation 'com.google.mediapipe:solution-core:0.8.10'
-    implementation 'com.google.mediapipe:facemesh:0.8.10'
+    implementation 'com.google.mediapipe:solution-core:latest.release'
+    implementation 'com.google.mediapipe:facemesh:latest.release'
 
     // ESRC SDK
-    implementation name: 'esrc-sdk-2.5.8', ext: 'aar'
+    implementation name: 'esrc-sdk-2.6.1', ext: 'aar'
 
     // Test
     testImplementation 'junit:junit:4.+'

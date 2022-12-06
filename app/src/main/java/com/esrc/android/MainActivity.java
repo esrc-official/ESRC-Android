@@ -1,9 +1,9 @@
 package com.esrc.android;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
+import static android.Manifest.permission.CAMERA;
+import static android.Manifest.permission.INTERNET;
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
@@ -21,16 +21,16 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import com.esrc.sdk.android.ESRC;
 import com.esrc.sdk.android.ESRCException;
 import com.esrc.sdk.android.ESRCFragment;
 import com.esrc.sdk.android.ESRCLicense;
 import com.esrc.sdk.android.ESRCType;
-
-import static android.Manifest.permission.CAMERA;
-import static android.Manifest.permission.INTERNET;
-import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
-import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 public class MainActivity extends AppCompatActivity implements ActivityCompat.OnRequestPermissionsResultCallback {
     private static final String TAG = "MainActivity";
@@ -147,6 +147,7 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
         }, 120000);
     }
 
+
     @Override
     protected void onDestroy() {
         // Stop
@@ -154,6 +155,7 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
 
         super.onDestroy();
     }
+
 
     /**
      * Initialize layout.
@@ -500,7 +502,7 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
      */
     @TargetApi(Build.VERSION_CODES.M)
     private void showDialogForPermission(String msg) {
-        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(MainActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("Permission");
         builder.setMessage(msg);
         builder.setCancelable(false);
